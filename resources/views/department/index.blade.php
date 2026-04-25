@@ -14,6 +14,8 @@
             <li class="list-group-item">
                 {{ $loop->iteration }}. {{ $department->name }}
 
+                <a class="btn btn-info btn-sm" href="{{ route('department.show', $department) }}" role="button">Detail</a>
+
                 <a class="btn btn-warning btn-sm" href="{{ route('department.edit', $department) }}"
                     role="button">Edit</a>
 
