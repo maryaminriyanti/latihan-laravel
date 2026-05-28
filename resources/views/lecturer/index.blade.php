@@ -7,6 +7,7 @@
             {{ session('success') }}
         </div>
     @endsession
+
     <a class="btn btn-primary mb-3" href="{{ route('lecturer.create') }}" role="button">Create</a>
 
     <form action="">
@@ -16,6 +17,7 @@
                 <input type="text" class="form-control" id="keyword" name="keyword"
                     placeholder="Search lecturer name ..." value="{{ request('keyword') }}">
             </div>
+
             <div class="col-md-4">
                 <select class="form-select" id="department_id" name="department_id">
                     <option value="">All Department</option>
@@ -28,9 +30,11 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="col-md-4">
                 <button type="submit" class="btn btn-success">Search</button>
             </div>
+
         </div>
 
     </form>
@@ -39,6 +43,8 @@
             <li class="list-group-item">
                 {{ $lecturers->firstItem() + $loop->index }}. {{ $lecturer->name }} --
                 {{ $lecturer->department->name }}
+
+                <a class="btn btn-info btn-sm" href="{{ route('lecturer.show', $lecturer) }}" role="button">Detail</a>
 
                 <a class="btn btn-warning btn-sm" href="{{ route('lecturer.edit', $lecturer) }}"
                     role="button">Edit</a>

@@ -2,19 +2,21 @@
 
 namespace Database\Seeders;
 
-use App\Models\Student;
+use App\Models\Organization;
+use App\Models\OrganizationLeader;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class StudentSeeder extends Seeder
+class OrganizationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Student::factory()
+        Organization::factory()
         ->count(50)
+        ->has(OrganizationLeader::factory(), 'organizationLeader')
         ->create();
     }
 }

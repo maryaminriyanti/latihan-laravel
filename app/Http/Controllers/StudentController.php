@@ -64,9 +64,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('student.edit', 
-            ['title' => 'Edit Student',
-            'student'=> $student,
+            return view('student.edit', 
+                ['title' => 'Edit Student',
+                'student'=> $student,
         ]);
     }
 
