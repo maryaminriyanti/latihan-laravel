@@ -2,14 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-#[Fillable(['name', 'nim'])]
+use Illuminate\Database\Eloquent\SoftDeletes;
+#[Fillable(['name', 'nim', 'gender'])]
 class Student extends Model
 {
     /** @use HasFactory<\Database\Factories\StudentFactory> */
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     
 }
